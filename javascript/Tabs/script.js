@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tabsData.forEach((tab) => {
       const tabButton = document.createElement("button");
+      tabButton.setAttribute("data-tab", tab.id);
       tabButton.className = "tabLinks";
       tabButton.textContent = tab.title;
-      tabButton.setAttribute("data-tab", tab.id);
       tabContainer.appendChild(tabButton);
 
       const tabContent = document.createElement("div");

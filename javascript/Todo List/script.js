@@ -42,23 +42,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function addTodoItem(todoText) {
-    if (editMode) {
-      listItemBeingEdited.textContent = todoText;
-      todoSubmit.innerText = "Add Todo";
-      listItemBeingEdited = null;
-      editMode = false;
-    } else {
-      const todoItem = document.createElement("li");
-      const editButton = document.createElement("button");
-      const removeButton = document.createElement("button");
+    const todoItem = document.createElement("li");
+    const editButton = document.createElement("button");
+    const removeButton = document.createElement("button");
 
-      todoItem.innerHTML = `<span>${todoText}</span>`;
-      editButton.innerText = "EDIT";
-      removeButton.innerText = "REMOVE";
+    todoItem.innerHTML = `<span>${todoText}</span>`;
+    editButton.innerText = "EDIT";
+    removeButton.innerText = "REMOVE";
 
-      todoItem.appendChild(editButton);
-      todoItem.appendChild(removeButton);
-      todoList.appendChild(todoItem);
-    }
+    todoItem.appendChild(editButton);
+    todoItem.appendChild(removeButton);
+    todoList.appendChild(todoItem);
   }
 });
